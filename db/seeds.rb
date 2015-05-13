@@ -6,16 +6,16 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create(
+User.create!(
   name: "Alvar Hanso",
   email: "alvar@hanso.dk",
   avatar: File.open('public/alvar.jpg'),
   shtick: "I stare at stuff inside buildings"
 )
 
-tag = Tag.create(name: "video")
+tag = Tag.create!(name: "video")
 
-Article.create(
+Article.create!(
   title: "Welcome to the Island!",
   content: "Isn't it nice here?",
   author: User.first,
@@ -23,7 +23,7 @@ Article.create(
 )
 
 ["The Hydra", "The Swan", "The Orchid"].each do |station|
-  Article.create(
+  Article.create!(
     title: station,
     content: "This is an example guide. It's just an article with links to other articles!\n\n- [Welcome](/articles/welcome-to-the-island)",
     author: User.first,
